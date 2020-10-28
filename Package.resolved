@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DataStream",
+        "repositoryURL": "https://github.com/hughbe/DataStream",
+        "state": {
+          "branch": null,
+          "revision": "e7da621235b5a4db261f82a51a936947c5dcab0c",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "MAPI",
+        "repositoryURL": "https://github.com/hughbe/SwiftMAPI",
+        "state": {
+          "branch": null,
+          "revision": "bd0743e5270d0c92f920614d41300f7dba54d929",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "WindowsDataTypes",
+        "repositoryURL": "https://github.com/hughbe/WindowsDataTypes",
+        "state": {
+          "branch": null,
+          "revision": "d61796516927097258550e91d0c2f041ea19eaec",
+          "version": "1.0.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
