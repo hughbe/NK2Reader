@@ -7,19 +7,7 @@
 
 import Foundation
 
-public func getData(name: String) throws -> Data {
-    var name = name
-    let urlExtension: String
-    if name.hasSuffix(".NK2") {
-        name = String(name.prefix(name.count - 4))
-        urlExtension = "NK2"
-    } else if name.hasSuffix(".dat") {
-        name = String(name.prefix(name.count - 4))
-        urlExtension = "dat"
-    } else {
-        urlExtension = "NK2"
-    }
-    
-    let url = URL(forResource: name, withExtension: urlExtension)
+public func getData(name: String, fileExtension: String) throws -> Data {
+    let url = Bundle.module.url(forResource: name, withExtension: fileExtension)!
     return try Data(contentsOf: url)
 }

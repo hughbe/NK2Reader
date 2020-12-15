@@ -23,14 +23,14 @@ public struct NK2File {
     }
     
     public init(data: Data) throws {
-        var dataStream = DataStream(data: data)
+        var dataStream = DataStream(data)
         try self.init(dataStream: &dataStream)
     }
     
     public init(dataStream: inout DataStream) throws {
         /// Metadata 4
         self.metadata = try dataStream.read(endianess: .littleEndian)
-        if self.metadata != 0xBAADF00D {
+        guard self.metadata == 0xBAADF00D else {
             throw NK2ReadError.invalidSignature(signature: self.metadata)
         }
         

@@ -5,7 +5,7 @@ import MAPI
 final class NK2FileTests: XCTestCase {
     func testSimple() throws {
         do {
-            let data = try getData(name: "hughbe/Outlook")
+            let data = try getData(name: "hughbe_Outlook", fileExtension: "NK2")
             let file = try NK2File(data: data)
             
             XCTAssertEqual(1, file.rows.count)
@@ -50,7 +50,7 @@ final class NK2FileTests: XCTestCase {
 
     func testRecent() throws {
         do {
-            let data = try getData(name: "hughbe/Stream_Autocomplete_0_C46AC97B9CA2EF4197BE00D129BCCA43.dat")
+            let data = try getData(name: "Stream_Autocomplete_0_C46AC97B9CA2EF4197BE00D129BCCA43", fileExtension: "dat")
             let file = try NK2File(data: data)
 
             XCTAssertEqual(2, file.rows.count)
@@ -127,7 +127,7 @@ final class NK2FileTests: XCTestCase {
             XCTAssertEqual([0x53, 0x4D, 0x54, 0x50, 0x3A, 0x42, 0x45, 0x4C, 0x4C, 0x41, 0x4D, 0x59, 0x2E, 0x48, 0x55, 0x47, 0x48, 0x44, 0x40, 0x47, 0x4D, 0x41, 0x49, 0x4C, 0x2E, 0x43, 0x4F, 0x4D, 0x00], [UInt8](file.rows[1].searchKey!))
         }
         do {
-            let data = try getData(name: "hughbe/Stream_Autocomplete_0_DFE96F3C294B9243A8156DAF9CF76306.dat")
+            let data = try getData(name: "Stream_Autocomplete_0_DFE96F3C294B9243A8156DAF9CF76306", fileExtension: "dat")
             let file = try NK2File(data: data)
             
             XCTAssertEqual(3, file.rows.count)
@@ -445,7 +445,7 @@ final class NK2FileTests: XCTestCase {
     
     func testJoachimmetzPlaso() throws {
         do {
-            let data = try getData(name: "joachimmetz/plaso/Outlook")
+            let data = try getData(name: "plaso_Outlook", fileExtension: "NK2")
             let file = try NK2File(data: data)
             
             XCTAssertEqual(5, file.rows.count)

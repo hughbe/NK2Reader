@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/hughbe/DataStream", from: "1.1.0"),
+        .package(url: "https://github.com/hughbe/DataStream", from: "2.0.0"),
         .package(name: "MAPI", url: "https://github.com/hughbe/SwiftMAPI", from: "1.1.0")
     ],
     targets: [
@@ -24,7 +24,7 @@ let package = Package(
             dependencies: ["DataStream", "MAPI"]),
         .testTarget(
             name: "NK2ReaderTests",
-            dependencies: ["NK2Reader"]
-        ),
+            dependencies: ["NK2Reader"],
+            resources: [.process("Resources")]),
     ]
 )
