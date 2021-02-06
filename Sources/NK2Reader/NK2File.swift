@@ -194,7 +194,7 @@ public struct NK2File {
             case .guid:
                 /// PT_CLSID
                 /// Bytes to be interpreted as a GUID 16
-                self.value = try dataStream.readGUID(endianess: .littleEndian)
+                self.value = try GUID(dataStream: &dataStream)
             case .binary:
                 /// PT_BINARY
                 /// Number of bytes n 4
